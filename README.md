@@ -1,12 +1,3 @@
-# Thermal Field
+# DMET for quantum chemistry
 
-This project focus on explore the new theory / computational scheme based on thermal field theory
-
-The project has two parts:
-
-I. MR-CC project: 
-Applying thermal-field theory on multi-reference coupled cluster theory for dynamical correlation electronic structure problems. 
-
-II. Thermal properties project:
-Applying thermal-field theory for statistical mechanics for finite temperature or time dependent electronic structure problems.
-
+In this project, we seek to implement the density matrix embedding theory (DMET) method described in Wouters, Sebastian, et al. "A practical guide to density matrix embedding theory in quantum chemistry." Journal of chemical theory and computation 12.6 (2016): 2706-2719. 
