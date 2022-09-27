@@ -60,14 +60,10 @@ def calculate_fock_matrix(mo_flag, mean_field, molecular_HF):
     return fock_MO
 
 
-def calculate_1_electron_density_matrix(mo_flag, mean_field):
+def calculate_1_electron_density_matrix(mean_field):
     """ extract one electronic reduced density matrix from PySCF HF calculation """
     # 1 RDM in AO basis
     RDM_1_AO = mean_field.make_rdm1()
     print("1-rdm(in AO basis):\n{:}".format(RDM_1_AO.shape))
 
-    if mo_flag:
-        # 1-rdm matrix in MO basis
-        RDM_1_MO = np.einsum('pi,pq,qj->ij', mean_field.mo_coeff, RDM_1_AO, mean_field.mo_coeff)
-        print("1 rdm (in MO basis):\n{:}".format(RDM_1_MO.shape))
-        return RDM_1_MO
+    return RDM_1_AO

@@ -7,12 +7,12 @@ from pyscf import gto, scf, ao2mo
 import numpy as np
 
 # import the path to the package
-project_dir = abspath(join(dirname(__file__), '/Users/pauliebao/DMET_share_to_brother_six/project'))
+project_dir = abspath(join(dirname(__file__), '/Users/pauliebao/DMET_share_to_brother_six/'))
 sys.path.insert(0, project_dir)
 
 # local import
-from extract_Hamiltonian_parameters import *
-from Hartree_Fock import *
+from project.extract_Hamiltonian_parameters import *
+from project.Hartree_Fock import *
 
 def main():
     """ main function to run DMET calculation  """
@@ -63,7 +63,8 @@ def main():
     NR_energy = mean_field.energy_nuc()
 
     ## get 1-electron reduced density matrix
-    RDM_1 = calculate_1_electron_density_matrix(mo_flag, mean_field)
+    RDM_1 = calculate_1_electron_density_matrix(mean_field)
+
 
     if debug_flag:
         # compare PySCF HF calculation to my naive HF calculation
